@@ -1,15 +1,14 @@
 <?php
-  require_once 'db_connect/hupd.php';
-  
-  $cnt=new add_edit_tipsuschnosti($host, $user, $password, $db , $charset);
+  require_once 'start.php';
+  $cnt=new add_edit_tipsuschnosti(Config::DB_HOST, Config::DB_USER, Config::DB_PASSWORD, Config::DB_NAME , Config::DB_CHARSET);
   $cnt->request();
   $cnt->page_start("PROTECTIVE COATINGS DATA. Добавление/Редактирование/Удаление Типов Сущностей.");
-  
+
   $this_file = basename (__FILE__);
   echo $cnt->tag_2("header",$cnt->tag_2("h1", $this_file));
-  
+
   $cnt->action();
-  
+
   $cnt->getFieldsByTipsuschnosti_id();
   $TipFromTipSuschnosti = $cnt->getFieldsByTipsuschnosti_id();
   echo <<<END
@@ -28,11 +27,11 @@
                     <td> <input id="Tip" name="Tip" type="text" value="$cnt->Tip" /></td> </tr>
             </tbody>
           </table>
-          
+
           <input type="submit" id="Action" name="Action" value="Добавить" />
           <input type="submit" id="Action" name="Action" value="Обновить" />
           <input type="submit" id="Action" name="Action" value="Удалить" />
-          
+
         </fieldset>
       </form>
     </section>

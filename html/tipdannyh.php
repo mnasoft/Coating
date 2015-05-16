@@ -1,10 +1,10 @@
 <?php
-  require_once 'db_connect/hupd.php';
+  require_once 'start.php';
 
-  $cnt=new coating($host, $user, $password, $db , $charset);
-  
+  $cnt=new coating(Config::DB_HOST, Config::DB_USER, Config::DB_PASSWORD, Config::DB_NAME , Config::DB_CHARSET);
+
   $cnt->page_start("PROTECTIVE COATINGS DATA. Тип_Данных");
-  
+
   $this_file = basename (__FILE__);
   $cnt->tag("h1", $this_file);
 

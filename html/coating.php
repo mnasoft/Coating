@@ -1,9 +1,9 @@
 <?php
-  require_once 'db_connect/hupd.php';
-  
-  $cnt=new coating($host, $user, $password, $db , $charset);
+  require_once 'start.php';
+
+  $cnt=new coating(Config::DB_HOST, Config::DB_USER, Config::DB_PASSWORD, Config::DB_NAME , Config::DB_CHARSET);
   $cnt->page_start();
-  
+
   $this_file = basename (__FILE__);
   $cnt->tag("h1", $this_file);
 
@@ -16,15 +16,15 @@
 
   foreach ($array as $value)
   {
-    $cnt->show_table($query="DESC " . $value, $table_caption="DESC " . $value,"id","Button_click"); 
-    $cnt->show_table($query="SELECT * FROM " . $value, $table_caption="SELECT * FROM " . $value,"id","Button_click"); 
-    $cnt->show_table($query="SHOW TABLE STATUS " . $value, $table_caption="TABLE STATUS " . $value,"id","Button_click"); 
-    $cnt->show_table($query="SHOW KEYS IN " . $value,$table_caption="KEYS IN " . $value,"id","Button_click"); 
+    $cnt->show_table($query="DESC " . $value, $table_caption="DESC " . $value,"id","Button_click");
+    $cnt->show_table($query="SELECT * FROM " . $value, $table_caption="SELECT * FROM " . $value,"id","Button_click");
+    $cnt->show_table($query="SHOW TABLE STATUS " . $value, $table_caption="TABLE STATUS " . $value,"id","Button_click");
+    $cnt->show_table($query="SHOW KEYS IN " . $value,$table_caption="KEYS IN " . $value,"id","Button_click");
   }
   echo <<<END
-  
-    <MATH>&int;_a_^b^{f(x)<over>1+x} dx</MATH>  
+
+    <MATH>&int;_a_^b^{f(x)<over>1+x} dx</MATH>
 END;
-  
+
   $cnt->page_end();
 ?>

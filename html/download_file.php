@@ -1,7 +1,6 @@
 <?php
-  require_once 'db_connect/hupd.php';
-
-  $cnt=new coating($host, $user, $password, $db , $charset);
+  require_once 'start.php';
+  $cnt=new coating(Config::DB_HOST, Config::DB_USER, Config::DB_PASSWORD, Config::DB_NAME , Config::DB_CHARSET);
 
   $cnt->page_start("PROTECTIVE COATINGS DATA. Download_file.");
 ?>
@@ -10,7 +9,7 @@
       Отправить этот файл: <input name="userfile" type="file" />              <!-- Название элемента input определяет имя в массиве $_FILES -->
     <input type="submit" value="Send File" />
   </form>
-  
+
 <?php
   $cnt->page_end();
 ?>

@@ -1,7 +1,7 @@
 <?php
-  require_once 'db_connect/hupd.php';
-  $cnt=new coating($host, $user, $password, $db , $charset);
-  
+  require_once 'start.php';
+  $cnt=new coating(Config::DB_HOST, Config::DB_USER, Config::DB_PASSWORD, Config::DB_NAME , Config::DB_CHARSET);
+
   $cnt->contact();
   $cnt->page_end();
 ?>
