@@ -1,18 +1,19 @@
 <?php
-  require_once 'start.php';
+// add_edit_suschnost.php
+require_once 'start.php';
 
-  $cnt=new add_edit_suschnost(Config::DB_HOST, Config::DB_USER, Config::DB_PASSWORD, Config::DB_NAME , Config::DB_CHARSET);
-  $cnt->request();
-  $cnt->page_start("PROTECTIVE COATINGS DATA. Добавление и Редактирование Сущностей.");
+$cnt=new add_edit_suschnost(Config::DB_HOST, Config::DB_USER, Config::DB_PASSWORD, Config::DB_NAME , Config::DB_CHARSET);
+$cnt->request();
+$cnt->page_start("PROTECTIVE COATINGS DATA. Добавление и Редактирование Сущностей.");
 
-  $this_file = basename (__FILE__);
-  echo $cnt->tag_2("header",$cnt->tag_2("h1", $this_file));
+$this_file = basename (__FILE__);
+echo $cnt->tag_2("header",$cnt->tag_2("h1", $this_file));
 
-  $cnt->action();
+$cnt->action();
 
-  $cnt->getFieldsBySuschnost_id();
-  $TipFromTipSuschnosti = $cnt->getTipFromTipSuschnosti();
-  echo <<<END
+$cnt->getFieldsBySuschnost_id();
+$TipFromTipSuschnosti = $cnt->getTipFromTipSuschnosti();
+echo <<<END
 
     <section id="dialog">
       <h1>$this_file</h1>

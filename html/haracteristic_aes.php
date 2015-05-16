@@ -1,4 +1,5 @@
 <?php
+// haracteristic_aes.php
   require_once 'start.php';
 
   $cnt=new haracteristic(Config::DB_HOST, Config::DB_USER, Config::DB_PASSWORD, Config::DB_NAME , Config::DB_CHARSET);

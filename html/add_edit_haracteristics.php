@@ -1,25 +1,26 @@
 <?php
-//  require_once 'start.php';
-  require_once 'start.php';
-  $cnt=new aeh_test(Config::DB_HOST, Config::DB_USER, Config::DB_PASSWORD, Config::DB_NAME , Config::DB_CHARSET);
+// add_edit_haracteristics.php
 
-  $cnt->request();
-  $cnt->page_start("PROTECTIVE COATINGS DATA. Добавление и Редактирование Характеристик.");
+require_once 'start.php';
+$cnt=new aeh_test(Config::DB_HOST, Config::DB_USER, Config::DB_PASSWORD, Config::DB_NAME , Config::DB_CHARSET);
 
-  $this_file = basename (__FILE__);
-  echo $cnt->tag_2("header",$cnt->tag_2("h1", $this_file));
-  $cnt->action();
+$cnt->request();
+$cnt->page_start("PROTECTIVE COATINGS DATA. Добавление и Редактирование Характеристик.");
 
-  $SuschnostOboznachenieById = $cnt->getSuschnostOboznachenieById();
-  $TipDannyhNaimenovanieById = $cnt->getTipDannyhNaimenovanieById();
-  $ob_r = $cnt->getMnozitelOboznachenieRusByStepen();
-  $RazmernostTipById = $cnt->getRazmernostTipById();
-  $suffics = 'б/р';
-  $suffics = $cnt->getSuffics();
+$this_file = basename (__FILE__);
+echo $cnt->tag_2("header",$cnt->tag_2("h1", $this_file));
+$cnt->action();
 
-  $cnt->section_open("dialog");
-  echo html::tag_2("header",html::tag_2("h3", "Добавление характеристик"));
-  echo <<<END
+$SuschnostOboznachenieById = $cnt->getSuschnostOboznachenieById();
+$TipDannyhNaimenovanieById = $cnt->getTipDannyhNaimenovanieById();
+$ob_r = $cnt->getMnozitelOboznachenieRusByStepen();
+$RazmernostTipById = $cnt->getRazmernostTipById();
+$suffics = 'б/р';
+$suffics = $cnt->getSuffics();
+
+$cnt->section_open("dialog");
+echo html::tag_2("header",html::tag_2("h3", "Добавление характеристик"));
+echo <<<END
 
       <form action="$this_file">
         <fieldset>
