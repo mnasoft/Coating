@@ -1,18 +1,19 @@
 <?php
-  require_once 'db_connect/hupd.php';
-  
-  $cnt=new add_edit_suschnost($host, $user, $password, $db , $charset);
-  $cnt->request();
-  $cnt->page_start("PROTECTIVE COATINGS DATA. Добавление и Редактирование Сущностей.");
-  
-  $this_file = basename (__FILE__);
-  echo $cnt->tag_2("header",$cnt->tag_2("h1", $this_file));
- 
-  $cnt->action();
-  
-  $cnt->getFieldsBySuschnost_id();
-  $TipFromTipSuschnosti = $cnt->getTipFromTipSuschnosti();
-  echo <<<END
+// add_edit_suschnost.php
+require_once 'start.php';
+
+$cnt=new add_edit_suschnost(Config::DB_HOST, Config::DB_USER, Config::DB_PASSWORD, Config::DB_NAME , Config::DB_CHARSET);
+$cnt->request();
+$cnt->page_start("PROTECTIVE COATINGS DATA. Добавление и Редактирование Сущностей.");
+
+$this_file = basename (__FILE__);
+echo $cnt->tag_2("header",$cnt->tag_2("h1", $this_file));
+
+$cnt->action();
+
+$cnt->getFieldsBySuschnost_id();
+$TipFromTipSuschnosti = $cnt->getTipFromTipSuschnosti();
+echo <<<END
 
     <section id="dialog">
       <h1>$this_file</h1>
@@ -34,11 +35,11 @@
                     <td> <input id="Primechanie" name="Primechanie" type="text" value="$cnt->Primechanie" /></td> </tr>
             </tbody>
           </table>
-          
+
           <input type="submit" id="Action" name="Action" value="Добавить" />
           <input type="submit" id="Action" name="Action" value="Обновить" />
           <input type="submit" id="Action" name="Action" value="Удалить" />
-          
+
         </fieldset>
       </form>
     </section>

@@ -1,12 +1,16 @@
 <?php
-  require_once 'db_connect/hupd.php';
-  
-  $cnt=new coating($host, $user, $password, $db , $charset);
-  $cnt->page_start("PROTECTIVE COATINGS DATA. Характеристика.");
+// haracteristic.php
+require_once 'start.php';
 
-  $this_file = basename (__FILE__);
-  $cnt->tag("h1", $this_file);
-  
-  $cnt->show_table($query="select * from Характеристика;",$table_caption="table",$btn="Mnozitel_10_id","Button_select_haracteristic_for_edit");
-  $cnt->page_end();
+$cnt=new coating(Config::DB_HOST, Config::DB_USER, Config::DB_PASSWORD, Config::DB_NAME , Config::DB_CHARSET);
+$cnt->page_start("PROTECTIVE COATINGS DATA. Характеристика.");
+
+$this_file = basename (__FILE__);
+$cnt->tag("h1", $this_file);
+
+$cnt->show_table($query="select * from Характеристика;",
+		 $table_caption="table",
+		 $btn="Mnozitel_10_id",
+		 "Button_select_haracteristic_for_edit");
+$cnt->page_end();
 ?>

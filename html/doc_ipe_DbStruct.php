@@ -1,9 +1,10 @@
 <?php
-  require_once 'db_connect/hupd.php';
+// doc_ipe_DbStruct.php
+require_once 'start.php';
 
-  $cnt=new coating($host, $user, $password, $db , $charset);
-  
-  $cnt->page_start();
-  $cnt->doc_ipe_DbStruct();
-  $cnt->page_end();
+$cnt=new coating(Config::DB_HOST, Config::DB_USER, Config::DB_PASSWORD, Config::DB_NAME , Config::DB_CHARSET);
+
+$cnt->page_start();
+$cnt->doc_ipe_DbStruct();
+$cnt->page_end();
 ?>
