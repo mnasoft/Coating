@@ -4,7 +4,7 @@ abstract class Config {
 
   const DB_HOST         = "localhost";          // $host="localhost";
   const DB_USER         = "namatv";             // $user="namatv";
-  const DB_PASSWORD     = "GT{ktdfyblb 5";       // $password="qwerty123456";
+  const DB_PASSWORD     = "qwerty123456";       // $password="qwerty123456";
   const DB_NAME         = "coating";            // $db="coating";
   const DB_CHARSET      = "utf8";               // $charset="utf8";
 
