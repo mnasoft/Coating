@@ -10,7 +10,7 @@
 
   $host="localhost";
   $user="namatv";
-  $password="qwerty123456";
+  $password="GT{ktdfyblb 5";
   $db="coating";
   $charset="utf8";
 ?>
