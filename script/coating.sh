@@ -1,11 +1,12 @@
 #!/bin/bash
 cat coating.sql \
-INSERT_TipDannyh.sql \
-INSERT_Razmernost.sql \
-INSERT_Mnozitel_10.sql \
-INSERT_TipSuschnosti.sql \
-INSERT_Suschnost.sql \
-INSERT_Harakteristika.sql \
+    INSERT_TipDannyh.sql \
+    INSERT_Razmernost.sql \
+    INSERT_Mnozitel_10.sql \
+    INSERT_TipSuschnosti.sql \
+    INSERT_Suschnost.sql \
+    INSERT_Harakteristika.sql \
+    INSERT_MimeType.sql \    
 | mysql -u root -p
 
 # 
