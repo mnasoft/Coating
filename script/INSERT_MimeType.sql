@@ -1,7 +1,8 @@
 SET NAMES 'utf8';
 USE coating;
 
-INSERT INTO MimeType (Обозначение, Описание) VALUES ('application/atom+xml', 'Atom feeds'),
+INSERT INTO MimeType (Обозначение, Описание) VALUES
+('application/atom+xml', 'Atom feeds'),
 ('application/vnd.dart', 'Dart files [8]'),
 ('application/ecmascript', 'ECMAScript/JavaScript; Defined in RFC 4329 (equivalent to application/javascript but with stricter processing rules)'),
 ('application/EDI-X12', 'EDI X12 data; Defined in RFC 1767'),
