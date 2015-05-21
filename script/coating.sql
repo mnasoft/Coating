@@ -88,7 +88,7 @@ CREATE TABLE Характеристика
   Число_max                            FLOAT                        COMMENT 'Максимальное зачение для диапазона значений',
   Строка                               varchar(255)                 COMMENT 'Строковая характеристика',
   Сущность_id                          BIGINT UNSIGNED NOT NULL     COMMENT 'Код сущности',
-  Файл_id                              BIGINT UNSIGNED              COMMENT 'Код присоединенного файла',
+  Файл_id                              BIGINT UNSIGNED     NULL     COMMENT 'Код присоединенного файла',
   ТипДанных_id                         BIGINT UNSIGNED NOT NULL     COMMENT 'Код типа данных',
   Размерность_id                       BIGINT UNSIGNED              COMMENT 'Код размерности',
   Множитель_10_id                      TINYINT NOT NULL DEFAULT 0   COMMENT 'Код множителя',
