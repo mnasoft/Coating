@@ -54,6 +54,30 @@ CREATE TABLE Сущность
   FOREIGN KEY (ТипСущности_id)        REFERENCES ТипСущности (id) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;
 
+CREATE TABLE MimeType
+(
+   id                                     BIGINT UNSIGNED AUTO_INCREMENT,
+   Обозначение                            varchar(127)              COMMENT 'Например: application/vnd.oasis.opendocument.text',
+   Описание                               TEXT                      COMMENT 'Например: OpenDocument Text; Registered[20]',
+   PRIMARY KEY (id)
+) ENGINE InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+
+CREATE TABLE Файл
+(
+  id                                   BIGINT UNSIGNED AUTO_INCREMENT,
+  Файл                                 varchar(255)                 COMMENT 'Имя файла на файловом ресурсе. Например: 2015-05-17-21-19-4.438216-9ba1e53325cff7733cd84c84b70f1334.pdf',
+  Имя                                  varchar(255)                 COMMENT 'Имя файла при выполнении опрерации скачивания. Например: GOST-2.301-80.pdf',
+  Описание                             varchar(255)                 COMMENT 'Краткое описание содержимого файла. Например: ГОСТ 2.301-68. Единая система конструкторской документации. Форматы',
+  MD5                                  varchar(35)                  COMMENT 'Контрольная сумма MD5 файла',
+  SHA1                                 varchar(45)                  COMMENT 'Контрольная сумма SHA1 файла',
+  Размер                               BIGINT UNSIGNED NOT NULL     COMMENT 'Размер файла в байтах',
+  MimeType_id                          BIGINT UNSIGNED NOT NULL     COMMENT 'Код Mime типа',
+  PRIMARY KEY (id),
+  FOREIGN KEY (MimeType_id)     REFERENCES MimeType (id)       ON DELETE RESTRICT ON UPDATE CASCADE,
+) ENGINE InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+
 CREATE TABLE Характеристика
 (
   id                                   BIGINT UNSIGNED AUTO_INCREMENT,
@@ -72,7 +96,8 @@ CREATE TABLE Характеристика
   FOREIGN KEY (Сущность_id)     REFERENCES Сущность (id)          ON DELETE RESTRICT ON UPDATE CASCADE,
   FOREIGN KEY (ТипДанных_id)    REFERENCES ТипДанных (id)         ON DELETE RESTRICT ON UPDATE CASCADE,
   FOREIGN KEY (Размерность_id)  REFERENCES Размерность (id)       ON DELETE RESTRICT ON UPDATE CASCADE,
-  FOREIGN KEY (Множитель_10_id) REFERENCES Множитель_10 (Степень) ON DELETE RESTRICT ON UPDATE CASCADE
+  FOREIGN KEY (Множитель_10_id) REFERENCES Множитель_10 (Степень) ON DELETE RESTRICT ON UPDATE CASCADE,
+  FOREIGN KEY (Файл_id)         REFERENCES Файл (id)              ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE ТипИспытаний
@@ -92,24 +117,3 @@ CREATE TABLE СущностьСодержит
   FOREIGN KEY (ПодСущность_id) REFERENCES Сущность (id) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;
 
-CREATE TABLE MimeType
-(
-   id                                     BIGINT UNSIGNED AUTO_INCREMENT,
-   Обозначение                            varchar(127)              COMMENT 'Например: application/vnd.oasis.opendocument.text',
-   Описание                               TEXT                      COMMENT 'Например: OpenDocument Text; Registered[20]',
-   PRIMARY KEY (id)
-) ENGINE InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;
-
-
-CREATE TABLE Файл
-(
-  id                                   BIGINT UNSIGNED AUTO_INCREMENT,
-  Имя                                  varchar(255)                 COMMENT 'Имя файла на файловом ресурсе',
-  MD5                                  varchar(35)                  COMMENT 'Контрольная сумма MD5 файла',
-  SHA1                                 varchar(45)                  COMMENT 'Контрольная сумма SHA1 файла',
-  Размер                               BIGINT UNSIGNED NOT NULL     COMMENT 'Размер файла в байтах',
-  MimeType_id                          BIGINT UNSIGNED NOT NULL     COMMENT 'Код Mime типа',
-  PRIMARY KEY (id),
-  FOREIGN KEY (MimeType_id) REFERENCES MimeType (id)       ON DELETE RESTRICT ON UPDATE CASCADE,
-  FOREIGN KEY (MimeType_id) REFERENCES Характеристика (id) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE InnoDB CHARACTER SET utf8 COLLATE utf8_general_ci;
