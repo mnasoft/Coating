@@ -1,6 +1,6 @@
 <?php
 // add_edit_tipsuschnosti.php
-require_once 'start.php';
+  require_once 'start.php';
 
 $cnt=new add_edit_tipsuschnosti(Config::DB_HOST, Config::DB_USER, Config::DB_PASSWORD, Config::DB_NAME , Config::DB_CHARSET);
 
@@ -14,6 +14,7 @@ $cnt->action();
 
 $cnt->getFieldsByTipsuschnosti_id();
 $TipFromTipSuschnosti = $cnt->getFieldsByTipsuschnosti_id();
+
 echo <<<END
 
 <section id="dialog">
@@ -40,6 +41,6 @@ echo <<<END
   </section>
   </body>
   </html>
-  END;
+END;
 
 ?>
