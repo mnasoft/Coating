@@ -25,14 +25,14 @@ END;
 about;
   }
 
-  public function doc_ipe_DbStruct() {
-    echo <<<doc_ipe_DbStruct
-  <h1>Coating</h1>
-  <h2>Структура таблиц БД</h2>
-  <section class="center">
-  <img src="./img/db_coating_structure.png"></img>
-  </section>
-doc_ipe_DbStruct;
+  public function show_image($title_h1, $title_h2, $image) {
+    echo <<<show_image
+      <h1>$title_h1</h1>
+      <h2>$title_h2</h2>
+      <section class="center">
+      <img src="$image"></img>
+      </section>
+show_image;
   }
 
   public function contact() {

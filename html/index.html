@@ -32,18 +32,7 @@
                   <li><button class='nav' type='button' onclick="Frame_show('content', './add_edit_tipsuschnosti.php');">Типов Сущностей</button></li>
                 </ul>
               </li>
-              <li class='b'><button class='nav' type='button' onclick="toggle_visibility('ul_01_03');">Просмотр содержимого таблиц</button>
-                <ul id='ul_01_03' class='descr'>
-                  <li><button class='nav' type='button' onclick="Frame_show('content', './razmernost.php');">Размерность</button></li>
-                  <li><button class='nav' type='button' onclick="Frame_show('content', './mnozitel.php');">Множитель</button></li>
-                  <li><button class='nav' type='button' onclick="Frame_show('content', './tipdannyh.php');">Тип Данных</button></li>
-                  <li><button class='nav' type='button' onclick="Frame_show('content', './tipsuschnosti.php');">Тип Сущности</button></li>
-                  <li><button class='nav' type='button' onclick="Frame_show('content', './suschnost.php');">Сущность</button></li>
-                  <li><button class='nav' type='button' onclick="Frame_show('content', './haracteristic.php');">Характеристика</button></li>
-                  <li><button class='nav' type='button' onclick="Frame_show('content', './tipispytaniy.php');">Тип Испытаний</button></li>
-                  <li><button class='nav' type='button' onclick="Frame_show('content', './about.php');">Сущность Содержит</button></li>
-                </ul>
-              </li>
+
             </ul>
           </li>
           <li class='b'><button class='nav' type='button' onclick="toggle_visibility('ul_02');" >Документация</button>
@@ -66,8 +55,41 @@
                   <li><button class='nav' type='button' >n</button></li>
                 </ul>
               </li>
-              <li class='b'><button class='nav' type='button' onclick="toggle_visibility('ul_02_03');">Инструкция по эксплуатации</button>
-                <ul id='ul_02_03' class='descr'>
+	      <li class='b'><button class='nav' type='button' onclick="toggle_visibility('ul_02_03');">Таблицы</button>
+		<ul id='ul_02_03' class='descr'>
+		  <li class='b'><button class='nav' type='button' onclick="toggle_visibility('ul_02_03_01');">Описание</button>
+                    <ul id='ul_02_03_01' class='descr'>
+		      <li><button class='nav' type='button' onclick="Frame_show('content', './show_tables.php');">Перечень</button></li>
+                      <li><button class='nav' type='button' onclick="Frame_show('content', './razmernost_describe.php');">Размерность</button></li>
+                      <li><button class='nav' type='button' onclick="Frame_show('content', './mnozitel_describe.php');">Множитель</button></li>
+                      <li><button class='nav' type='button' onclick="Frame_show('content', './tipdannyh_describe.php');">Тип Данных</button></li>
+                      <li><button class='nav' type='button' onclick="Frame_show('content', './tipsuschnosti_describe.php');">Тип Сущности</button></li>
+                      <li><button class='nav' type='button' onclick="Frame_show('content', './suschnost_describe.php');">Сущность</button></li>
+                      <li><button class='nav' type='button' onclick="Frame_show('content', './haracteristic_describe.php');">Характеристика</button></li>
+                      <li><button class='nav' type='button' onclick="Frame_show('content', './tipispytaniy_describe.php');">Тип Испытаний</button></li>
+                      <li><button class='nav' type='button' onclick="Frame_show('content', './about.php_describe');">Сущность Содержит</button></li>
+		      <li><button class='nav' type='button' onclick="Frame_show('content', './file_describe.php');">Файл</button></li>
+		      <li><button class='nav' type='button' onclick="Frame_show('content', './mime_type_describe.php');">MimeType</button></li>
+		    </ul>
+		  </li>
+		  <li class='b'><button class='nav' type='button' onclick="toggle_visibility('ul_02_03_02');">Содержание</button>
+                    <ul id='ul_02_03_02' class='descr'>
+                      <li><button class='nav' type='button' onclick="Frame_show('content', './razmernost.php');">Размерность</button></li>
+                      <li><button class='nav' type='button' onclick="Frame_show('content', './mnozitel.php');">Множитель</button></li>
+                      <li><button class='nav' type='button' onclick="Frame_show('content', './tipdannyh.php');">Тип Данных</button></li>
+                      <li><button class='nav' type='button' onclick="Frame_show('content', './tipsuschnosti.php');">Тип Сущности</button></li>
+                      <li><button class='nav' type='button' onclick="Frame_show('content', './suschnost.php');">Сущность</button></li>
+                      <li><button class='nav' type='button' onclick="Frame_show('content', './haracteristic.php');">Характеристика</button></li>
+                      <li><button class='nav' type='button' onclick="Frame_show('content', './tipispytaniy.php');">Тип Испытаний</button></li>
+                      <li><button class='nav' type='button' onclick="Frame_show('content', './about.php');">Сущность Содержит</button></li>
+		      <li><button class='nav' type='button' onclick="Frame_show('content', './file.php');">Файл</button></li>
+		      <li><button class='nav' type='button' onclick="Frame_show('content', './mime_type.php');">MimeType</button></li>
+                    </ul>
+		  </li>
+                </ul>
+              </li>
+              <li class='b'><button class='nav' type='button' onclick="toggle_visibility('ul_02_05');">Инструкция по эксплуатации</button>
+                <ul id='ul_02_05' class='descr'>
                   <li><button class='nav' type='button' onclick="Frame_show('content', './doc_ipe_DbStruct.php');">Структура БД</button></li>
                   <li><button class='nav' type='button' >2</button></li>
                   <li><button class='nav' type='button' >3</button></li>
